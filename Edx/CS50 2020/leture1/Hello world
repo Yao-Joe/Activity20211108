@@ -1,0 +1,8 @@
+// First C program, at ide.cs50.io (ide: integrated developemnt environment)
+
+# include <stdio.h>
+
+int main(void)
+{
+  printf("Hello, world");
+}
