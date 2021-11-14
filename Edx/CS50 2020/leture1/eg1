@@ -1,0 +1,23 @@
+// wrong case
+# include <stdio.h>
+
+int main(void)
+{
+    {
+    int n = 1;  // if declare n in this scope {}, it is not effective outside of {}
+    }
+    n = 2;
+    printf("%i", n);
+}
+
+// right case
+# include <stdio.h>
+
+int main(void)
+{
+    int n = 2;
+    {
+    n = 1;
+    }
+    printf("%i", n);
+}
