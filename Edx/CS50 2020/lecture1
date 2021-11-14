@@ -1,0 +1,62 @@
+// First C program, at ide.cs50.io (ide: integrated developemnt environment)
+
+# include <stdio.h>
+
+int main(void)
+{
+  printf("Hello, world");
+}
+
+/*
+A-ha moment:
+1.
+                ----------
+ source code -> | compiler | -> machine code
+                ----------
+After compiling source code (hello.c), then excutable file (hello) which is bianry is generated. 
+
+2.
+              ----------
+arguments -> | compiler | -> return values, variables
+              ----------
+data type: int, float, long, char, string, bool ...
+
+3. variable statement is only effective in the scope, eg wrong case
+# include <stdio.h>
+
+int main(void)
+{
+    {
+    int n = 1;  // if declare n in this scope {}, it is not effective outside of {}
+    }
+    n = 2;
+    printf("%i", n);
+}
+
+Then lets correct it:
+# include <stdio.h>
+
+int main(void)
+{
+    int n = 2;
+    {
+    n = 1;
+    }
+    printf("%i", n);
+}
+Then in ide terminal, input "make test" and "./test"
+
+4. catagorize knowledge and connect knowledge by analogy
+
+5. Given Mario bros as an example: 
+use basic "for" loop can print four ? in a row or 3*3 brick 
+Most similar cases in fancy games today use the same logic (good way to stimulate interest)
+
+6. importance to understand limitation of computers, eg:
+  32 bits/ 64 bits can only represnt limited numbers
+  precision is limited (take 1/10 as an example, the result is 0.1000000014901161193847656250000)
+  
+7. on 19 January 2038, we will experience the same problem on 1st January 2020 (Year 2000 bug)
+Because 32 bits only represent 4 billion seconds from 1st January 1970
+
+*/
