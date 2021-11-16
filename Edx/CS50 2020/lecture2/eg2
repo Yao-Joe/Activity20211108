@@ -1,0 +1,21 @@
+/*
+Eg2:
+    1. string type is an array
+    2. make code cleaner, less computation
+*/
+
+# include <stdio.h>
+# include <cs50.h>
+# include <string.h>    // strlen function is included
+
+int main(void)
+{
+    string words[2];
+    words[0] = "Joe";
+    words[1] = "Jacky";
+    for (int i = 0, n = strlen(words[0]); i < n; i++) // less compuation
+    // for (int i = 0; i < strlen(words[0]); i++) 
+    {
+        printf("%c\n", words[0][i]);
+    }
+}
