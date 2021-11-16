@@ -1,0 +1,9 @@
+%C常用头文件
+
+字符处理ctype.h.
+地区化local.h.
+数学函数math.h.
+信号处理signal.h.
+输入输出stdio.h.
+实用工具程序stdlib.h.
+字符串处理string.h.
