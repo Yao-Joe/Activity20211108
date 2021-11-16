@@ -1,0 +1,5 @@
+Tips:
+
+1. A word = "Joe"
+  C can print word[3], word[40]. Therefore, C can see other memory. Btw, word[3] is "\0", means end.
+  Python cannot.
