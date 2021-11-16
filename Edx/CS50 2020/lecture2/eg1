@@ -1,0 +1,30 @@
+/*
+Eg1: 
+1. declare constant variable
+2. pass array parameters into another function
+  important: when pass array, usually pass two parameters: length of array, name of array
+*/
+
+# include <stdio.h>
+# include <cs50.h>
+
+void fun(int num, string arr[]);
+
+int main(void)
+{
+    const int TOTAL = 3;  // use constant variable 
+    string names[TOTAL];
+    //print three names
+    fun(TOTAL, names);  // pass parameters corresponding to arguments declared in fun
+}
+
+void fun(int num, string arr[]) //declare arguments used in fun
+{
+    arr[0] = "Joe";
+    arr[1] = "Jacky";
+    arr[2] = "Handy";
+    for (int i = 0; i < num; i++) // do not type ',', it is ';'
+    {
+        printf("%s\n", arr[i]);
+    }
+}
