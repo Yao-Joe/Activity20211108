@@ -1,0 +1,41 @@
+/*
+Eg4: Are you curious about "int main(void)"? Why do we code like this? 
+    Let's change main function "int main(void)" to "int main(int argc, string argv[])", what will happen?
+    1. "argc" means arguments count, counts inputed counted_numbers when you execute file. 
+    2. "argv" means arguments vector, store inputed aruments when you execute file. 
+    
+    And after "make test", 
+        insert "./test", output "hello world", 
+        insert "./test Joe", output "hello, Joe"
+        insert "./test Joe Joe", output "hello world"
+    Then we know 1st case,  argc is 1, including "./test"; argv = ["./test"]
+                 2nd case,  argc is 2, including "./test", "Joe"; argv = ["./test", "Joe"]
+                 3rd case,  argc is 3, including "./test", "Joe", "Joe"; argv = ["./test", "Joe", "Joe"]
+                 
+    Then we know how main(void) works, what about "int main"?
+    As we know int fun means the fun will return a number, so is main function. Main function will return 0 to show process is
+    nothing wrong, otherwise, return 1. 
+    Therefore, we can define return number as // shows
+    After we make file, and insert "./test Joe Joe", output "hello world"
+    And if you insert "echo $?"(? stores return value of last command, echo can show it), you will see "1".
+    
+    In a word, the mechanism of returning numbers is necessary and common for program, like HTTP returning 404 error. Because
+    machine cannot hear and see like human, machine needs those numbers to know the process is right or wrong.
+*/
+
+# include <stdio.h>
+# include <cs50.h>
+
+int main(int argc, string argv[])
+{
+    if (argc == 2)
+    {
+        printf("hello, %s\n", argv[1]);
+        // return 0 ;
+    }
+    else
+    {
+        printf("hello world\n");
+        // return 1 ;
+    }
+}
