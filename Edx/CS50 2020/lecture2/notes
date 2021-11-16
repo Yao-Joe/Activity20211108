@@ -1,0 +1,32 @@
+Notes here !!!
+
+1. What happened after typing "make hello"? 
+  clang -ggdb3 -O0 -std=c11 -Wall -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow    hello.c  -lcrypt -lcs50 -lm -o hello
+Let's explain this!
+
+"make" is a command line that helps to compile the .c file and create hello* file (0s and 1s, * means excutatble). So programer need not type "clang ....".
+By the way, "clang -o hello" means compile and output machine code file named hello. "-o" is an option like other options "-lcs50", "-lm". 
+
+Even thought we call the procedure compiling. Actually, in total, 4 steps are included in the compiling procedure:
+  preprocessing: prepare full source code. eg, # include <stdio.h> : it can include standard i/o head file to source code
+  compiling: convert source code to assembling code(汇编代码）
+  assembling: convert assembling code to 0 and 1
+  linking: linking all 0s and 1s together (0s and 1s are in different files, eg, .h, .c file) so that cpu runs 
+But simply speaking, we just call them compiling.
+
+2. Helpful tools:
+  help50, style50, check50, printf, debug50, ddb(论坛）
+Three things need to be emphasized. First, "printf" is used commonly, no matter how sophisticated programmers are. Second, ddb is a good way and do not be shy to ask questions.
+Last, sincerely, debug50 is the most important tool.
+
+3. Size of data type:
+  bool    1 Byte
+  char    1 Byte
+  double  8 Bytes
+  float   4 Bytes
+  int     4 Bytes
+  long    8 Bytes
+  
+4. Always try to make code cleaner!!!
+
+5. ALways try to make code more readable!!!
