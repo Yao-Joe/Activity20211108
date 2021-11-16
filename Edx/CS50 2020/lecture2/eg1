@@ -6,7 +6,7 @@ Eg1:
 */
 
 # include <stdio.h>
-# include <cs50.h>
+# include <cs50.h>  // <string.h> does not work, <cs50.h> works when declare string variable
 
 void fun(int num, string arr[]);
 
