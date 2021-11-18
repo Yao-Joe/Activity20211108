@@ -15,9 +15,9 @@ Even thought we call the procedure compiling. Actually, in total, 4 steps are in
 But simply speaking, we just call them compiling.
 
 2. Helpful tools:
-  help50, style50, check50, printf, debug50, ddb(论坛）
+  help50, style50, check50, printf, debug50, ddb(论坛)
 Three things need to be emphasized. First, "printf" is used commonly, no matter how sophisticated programmers are. Second, ddb is a good way and do not be shy to ask questions.
-Last, sincerely, debug50 is the most important tool.
+Last, sincerely, debug50 is the most important tool. Set breakpoint and run debug50 ./<filename> and press <enter> in terminal window.
 
 3. Size of data type:
   bool    1 Byte
