@@ -1,5 +1,7 @@
 /*
 Linear search
+The 1st one searches for numbers
+The 2nd one searches for strings
 /*
 
 # include <stdio.h>
@@ -10,9 +12,31 @@ const int TOTAL = 7;
 int main(void)
 {
     int number[] = {1, 2, 3, 4, 5, 6, 7};
-    for (int i = 0; i <= TOTAL; i++)
+    for (int i = 0; i < TOTAL; i++)
     {
         if (number[i] == 7 )
+        {
+            printf("Found\n");
+            return 0;
+        }
+    }
+    printf("NOT FUOND\n");
+    return 1;
+}
+
+---------------------------------------------------------
+# include <stdio.h>
+# include <cs50.h>
+# include <string.h>
+
+const int TOTAL = 7;
+
+int main(void)
+{
+    string names[] = {"Joe", "Jacky", "Handy", "Thor", "Chris", "Tony", "Peter"};
+    for (int i = 0; i < TOTAL; i++)
+    {
+        if (strcmp(names[i], "JOE") == 0)
         {
             printf("Found\n");
             return 0;
