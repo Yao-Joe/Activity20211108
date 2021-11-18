@@ -1,7 +1,63 @@
 Notes here!!!
 
 // So impressive that Professor hides numbers behind doors!
+// A new data structure type will be elaborately introduced in eg
+// Fancy stuff in the end ^^
 
 1. Big O notation O(n): represents how fast the operation number goes when total number n increases
 
-2.  
+2. Linear Search and Binary Search ( for instance, look for i in total n numbers )
+Linear search operates    n   times in worst case (assuming i in the end),   1 time in best case (assuming i in 1st place)
+Binary search operates log(n) times in worst case (finding i in last round), 1 time in best case (finding i in 1st round)
+In real world, we use sorted data to construct database, and search engine to find data for us.
+In order to sort and search data fast, we need good algorithms. Let's continue...
+
+3. 
+                   -----------
+unsorted data ->  | Algorithm | -> sorted data
+                   -----------
+To design good algorithm to sort data, we need consider memo/cpu/time/space/ and so on. This is tradeoff.
+
+//Let's introduce three sort algorithms. And sort n numbers from smallest to largest, and from left to right.
+4. Selection Sort:
+In n-1 rounds, from left to right, always find the smallest number and swap with the leftest unswapped number:
+  do n-1 times:
+    search from the 0th number to n-1 number, find the smallest, swap with 0th number;
+    search from the 1st number to n-1 number, find the smallest, swap with 1st number;
+    search from the 2nd number to n-1 number, find the smallest, swap with 2nd number;
+    ...
+    search from the (n-2)th number to (n-1)th number, find the smallest, swap with (n-2)th number;
+
+O(n^2)  Ω(n^2)  Θ(n^2)
+
+5. Bubble Sort:
+In n-1 rounds, from left to right, always compare a pair of numbers, and swap them if left one is larger:
+  while swap happens, do:
+    //0th pair is 0th number and 1st number, (n-2)th pair is (n-2)th number and (n-1)th number
+    from 0th pair to (n-2)th pair, swap numbers in pairs if left number is larger
+
+O(n^2)  Ω(n)  Θ(Not exist)
+    
+//Before introduce last sort algorithm, introduce recursion first.
+
+6. Recursion:
+Recursion means function invokes itself again and again. Note two things: 
+  baseline: or boundary conditions, a boundary when loop hits it, loop will not continue.
+  loop invoke: or recursion definition, define in which way function calls itself 
+
+7. Merge Sort:
+The idea is that if you want to sort an array, we can sort the left half of an array, then right half of an array, and merge them together.
+  then to sort left half of an array, we can sort left half of the left half of the array, then right half of the left half of the array, and merge them together.
+    ...
+    if array only contains 1 or 0 number, we needn't divide the array and sort it. So we touch the boundary conditions and return the array simply to merge.
+  
+For each time, it sort two half (n numbers), each time, sort half numbers for next round, so logn times for n numbers. Then logn * n = nlogn
+O(nlogn)  Ω(nlogn)  Θ(nlogn)
+  
+//Last but not least
+Big O Notation figure: 
+O(n^2)    Selection Bubble      Ω(n^2)    Selection       Θ(n^2)    Selection
+O(nlogn)  Merge                 Ω(nlogn)  Merge           Θ(nlogn)  Merge
+O(n)      Linear                Ω(n)      Bubble          Θ(n)      
+O(logn)   Binary                Ω(logn)                   Θ(logn)   
+O(1)                            Ω(1)      Linear Binary   Θ(1)
