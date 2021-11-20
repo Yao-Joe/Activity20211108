@@ -1,2 +1,51 @@
 Notes here!!!
 
+1. Memory stores data in Hexadecimal(base-16)
+ --  --  --  --  --  --  --  -- 
+| 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+ --  --  --  --  --  --  --  -- 
+| 8 | 9 | A | B | C | D | E | F |
+ --  --  --  --  --  --  --  -- 
+  when number increases over 9, it will use A-F to represent 10-15.
+And in real world, 0x as a prefix to indicate haxadecimal address in memory:
+ --  --  --  --  --  --  --  -- 
+|0x0|0x1|0x2|0x3|0x4|0x5|0x6|0x7|
+ --  --  --  --  --  --  --  -- 
+|0x8|0x9|0xA|0xB|0xC|0xD|0xE|0xF|
+ --  --  --  --  --  --  --  -- 
+ Each cell represents one Byte.
+ 
+2. pointer (& *):
+ Pointer is very important concept. Pointers contain address of other values, therefore, point from actual memory to variable.  
+ & symbol: get address of variable
+ * symbol: go into the variable of address
+int *p = &n; // assign address of integer n to pointer p
+int means type of n, * is stype of syntax(weird but need remember), p is whatever you name it, & means get address of n, n is a integer.
+Therefore, int *, char *, the format of declaring pointer variable such as 0x123456789.
+For instance int *p = 50;
+ --- --- --- --- --- --- --- ---
+|   |   |   |   |   |   |   |   |   
+ --- --- --- --- --- --- --- ---
+|              0x123            |   // p stores 0x123 (place of 50), pointer is 8 Bytes
+ --- --- --- --- --- --- --- ---
+|   |   |   |   |   |   |   |   |   
+ --- --- --- --- --- --- --- ---
+|   |   |   |   |      50       |   // 50 is at place 0x123 for instance, integer is 4 Bytes
+ --- --- --- --- --- --- --- ---
+ Then we can abstact as:
+  --- --- --- --- --- --- --- ---
+|   |   |   |   |   |   |   |   |   
+ --- --- --- --- --- --- --- ---
+|              p                |   // p points to 50, use *p, we can get 50
+ --- --- --- --|- --- --- --- ---
+|   |   |   |  | |   |   |   |  |   
+ --- --- --- --|- --- --- --- ---
+|   |   |   |  ->|      50      |
+ --- --- --- --- --- --- --- ---
+ 
+3. string is actually not data type in C. In <cs50.h>, typedef char *string;
+string s = "HI!";
+char *s = "HI!";
+They are the same. Becasue both s store pointer of first character. 
+
+4. 
