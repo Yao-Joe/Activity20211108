@@ -1,0 +1,18 @@
+/*
+eg7 create a file and write content into the file
+"FILE" is a data type in c. fopen will open a file, if file not exists, fopen will create a file, "a" means add new content into the file.
+fprintf means printing to a file
+Do not forget close(file) to release memory
+*/
+
+# include <stdio.h>
+# include <cs50.h> // include get_string
+
+int main(void)
+{
+    FILE *file = fopen("filename.csv", "a");
+    char *name = get_string("Please input your name: ");
+    char *number = get_string("Please input your number: ");
+    fprintf(file, "%s\t%s\n", name, number);
+    fclose(file);
+}
