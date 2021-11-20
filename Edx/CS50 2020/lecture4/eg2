@@ -1,5 +1,5 @@
 /*
-eg2
+eg2 verify that we can get continuous memory address even if the string is in the end.
 */
 
 # include <stdio.h>
@@ -7,7 +7,7 @@ eg2
 
 int main(void)
 {
-    string s = "HI!!";
+    string s = "HI!";
     printf("%p\n", &s[0]);
     printf("%p\n", &s[1]);
     printf("%p\n", &s[2]);
