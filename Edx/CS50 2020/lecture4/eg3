@@ -1,0 +1,17 @@
+/*
+eg3 if assign pointer s to pointer t, anything changed in t will also change in s.
+*/
+
+# include <stdio.h>
+# include <cs50.h>
+# include <ctype.h>
+
+int main(void)
+{
+    char s[] = "hi!";
+    //char *s = "hi!"; // string cannot be modified and this causes segementation fault
+    char *t = s;
+    t[0] = toupper(t[0]);
+    printf("%c\n", *s); // note it is "s", not "*s"
+    printf("%c\n", *t);
+}
