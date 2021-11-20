@@ -1,4 +1,4 @@
-%C常用头文件
+%C常用头文件 具体查看https://manual.cs50.io/
 
 字符处理ctype.h.
 islower() toupper()
