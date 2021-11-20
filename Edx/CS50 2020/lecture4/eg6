@@ -1,0 +1,55 @@
+/*
+eg6 a good example to explain how to swap two numbers
+from the 1st instance, two numbers are swapped in the swap function but not swapped in main function
+from the 2nd instance, two numbers are both swapped in the swap funciton and main function.
+The reason is passing value(x,y) to function(swap) will create new memory that store new variable(a,b) and anything changed in a,b will not change x,y 
+while, passing address(&x,&y) to function(swap) will not create new memory and address of x,y stored in a,b. 
+Then anything changed with *a *b are equal to anything changed in x,y.
+
+This is the fancy thing about pointer, and you can see how compact and clean the code is.
+*/
+
+# include <stdio.h>
+
+void swap(int a, int b);
+
+int main(void)
+{
+    int x = 16;
+    int y = 6;
+    swap(x,y);
+    printf("%i\n", x);
+    printf("%i\n", y);
+}
+
+void swap(int a, int b)
+{
+    int tmp = a;
+    a = b;
+    b = tmp;
+    printf("%i\n", a);
+    printf("%i\n", b);
+}
+
+-------------------------------------------------------
+# include <stdio.h>
+
+void swap(int *a, int *b);
+
+int main(void)
+{
+    int x = 16;
+    int y = 6;
+    swap(&x,&y);
+    printf("%i\n", x);
+    printf("%i\n", y);
+}
+
+void swap(int *a, int *b)
+{
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+    printf("%i\n", *a);
+    printf("%i\n", *b);
+}
