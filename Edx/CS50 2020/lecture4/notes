@@ -50,4 +50,28 @@ They are the same. Becasue both s store pointer of first character.
 
 4. get_string() function uses malloc() and free() in its design.
 
-5. 
+5. introduce constructure of memory which shows mechanism of memory storing is not random.
+ --- --- --- --- --- --- --- ---
+ |      machine code           |
+ --- --- --- --- --- --- --- ---
+ |       globals               |                          
+ --- --- --- --- --- --- --- ---
+ |       heap                  |                           
+ --- --- --- --- --- --- --- ---
+ |       stack                 |                           
+ --- --- --- --- --- --- --- ---
+ between heap and stack is very big chunk. 
+ The logic is as shown. Note that malloc() starts from heap to the bottom,
+ and call function starts from stack to the top.
+ And calling function, for eg, swap(), will put swap() obove main().
+ And we know that recursion will call itself again and again, if we do not end it. the stack will be filled to heap then the program crashes.
+ 
+ 6. Skip "scanf" here, not convenient.
+ 
+ 7. file I/O: 
+ Not like memory, when cut off the electricity, data goes but file in hard drive will be stored.
+ 
+ 
+ 
+ 
+ 
