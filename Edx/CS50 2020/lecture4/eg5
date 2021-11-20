@@ -1,0 +1,25 @@
+/*
+eg5 introduce valgrind tool
+After compiling and excuting the code, the result "HI!" is printed successfully.
+While, use "valgrind ./test" command, you can see
+"Invalid write of size 1"
+"Invalid read of size 1"
+Which means write and read 1 more invalid size
+And if you change to malloc(4);
+"All heap blocks were freed -- no leaks are possible" is shown.
+*/
+
+# include <stdio.h>
+# include <stdlib.h>
+
+int main(void)
+{
+    char *t = malloc(3);
+    // char *t = malloc(4);
+    t[0] = 'H';
+    t[1] = 'I';
+    t[2] = '!';
+    t[3] = '\0';
+    printf("%s\n", t);
+    free(t);
+}
