@@ -48,4 +48,6 @@ string s = "HI!";
 char *s = "HI!";
 They are the same. Becasue both s store pointer of first character. 
 
-4. 
+4. get_string() function uses malloc() and free() in its design.
+
+5. 
