@@ -1,0 +1,22 @@
+/*
+eg4 use strcpy() function to copy value instead of "="
+*/
+
+# include <stdio.h> // include printf()
+# include <cs50.h>  //
+# include <ctype.h> //
+# include <stdlib.h>  // include
+# include <string.h>  // include strcpy()
+
+int main(void)
+{
+    char *s = "hi!";
+    char *t = malloc(4);
+    
+    strcpy(t,s);
+    printf("%s\n", t);
+    t[0] = toupper(t[0]);
+    printf("%s\n", t);
+    printf("%s\n", s);
+    free(t);
+}
