@@ -1,11 +1,9 @@
 /*
 eg4 use strcpy() function to copy value instead of "="
 */
-
 # include <stdio.h> // include printf()
-# include <cs50.h>  //
-# include <ctype.h> //
-# include <stdlib.h>  // include
+# include <ctype.h> // include toupper()
+# include <stdlib.h>  // include malloc(), free()
 # include <string.h>  // include strcpy()
 
 int main(void)
