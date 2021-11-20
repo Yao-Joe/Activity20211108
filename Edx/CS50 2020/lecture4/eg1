@@ -1,5 +1,5 @@
 /*
-eg1
+eg1 compare pointer method with previous method by printing number & address. 
 */
 
 # include <stdio.h>
