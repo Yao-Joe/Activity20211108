@@ -1,0 +1,9 @@
+/*
+eg1 introduce image processing like blurring image 
+*/
+
+from PIL import Image, ImageFilter
+
+before = Image.open("huokake.jpeg") // Given an image named huokake
+after = before.filter(ImageFilter.BoxBlur(10))  // find neighbour 10 pixels
+after.save("out.jpeg") // save as whatever you name it.
