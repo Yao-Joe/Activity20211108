@@ -19,4 +19,6 @@ But Python is like a program running all the time, when executing the "Python ./
 And Python uses modules or other functions to support, then between source code and machine code lies other functions which may increase running time.
 Just imagine to translate Japanese to English line by line.
 
-5. 
+5. *This lecture really shows a lot of fancy features of Python. Using Python, we can ignore low level design such as memory allocation, stable size array, declare variable, print format so on and so forth.
+More importantly, Python provides many fancy modules for us to conveniently invoke and create interesting program in easy ways such as making QR code, image processing, face recognition, voice inpout and output.
+This course is really interesting and arises interest of beginners and motivate beginners.
