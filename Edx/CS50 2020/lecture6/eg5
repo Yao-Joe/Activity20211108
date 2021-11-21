@@ -1,0 +1,10 @@
+/*
+eg5 make QR code by website
+*/
+
+import os
+import qrcode
+
+img = qrcode.make("https://www.zhihu.com/")
+img.save("qr.png", "PNG")
+os.system("qr.png")
