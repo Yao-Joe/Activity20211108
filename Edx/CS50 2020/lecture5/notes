@@ -26,5 +26,7 @@ Use more spaces in memory to store linked list data.
 A good reason is array can only allocate continuous memory. If we need add more numbers to array and no more spaces in the end in memory, it will go wrong.
 While using linked list will not have this problem.
 
-2. 
+2. "segementation fault"
+For people who have seen the "segementation fault" before, at least I saw it a couple of times, this happens when you touch memory to which you are not allowed.
+For instance, if node *list = NULL, if not assign to NULL, list will point to any garbage memory and may cause this fault.
   
