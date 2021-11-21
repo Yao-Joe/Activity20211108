@@ -31,3 +31,36 @@ For people who have seen the "segementation fault" before, at least I saw it a c
 For instance, if node *list = NULL, if not assign to NULL, list will point to any garbage memory and may cause this fault.
 Therefore, alaways check NULL when using malloc(), if no memory or something wrong made by programmer, then immediately detect it.
 Just mention an inspiring point: programmer more experienced to you that would make mistake.
+
+3. binary search tree (eg2)
+If linked list cannot be sorted, it's useless in most cases. So binary search tree is a special sorted data structure based on linked list.
+search, delete, insert: Θ(logn) O(n) reference: https://www.bigocheatsheet.com/
+The worst case is all the values are in the same side. 
+
+4. hash table
+ ---    -----
+| A-|--|-> |p| //p means pointer to the next node. if none, p = NULL
+ ---    -----
+| B-|--|-> |p|
+ ---    -----
+| C-|--|-> |p|
+ ---    -----
+| D-|--|-> |p|
+ ---    -----
+| E-|--|-> |p|
+ ---    -----
+ basically, hash table is constructed by array of linked list.
+ search, delete, insert: Θ(1) O(n) reference: https://www.bigocheatsheet.com/
+ The worst case is all the values are in the same linked list
+ 
+5.tries
+ Tries is tree of array. constant time, but times memory.
+ 
+6.queue
+ FIFO, which is first in first out, with enqueue and dequeue to put in and out values
+ 
+7.stacks
+ LIFO, which is last in first out, with push and pop to put in and put out values
+ 
+8.dictionaries
+It stores key value pair. And key is unique.
