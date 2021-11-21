@@ -1,69 +1,32 @@
 /*
-eg2 a good example to demonstrate how to create, print, free a linked list.
+eg2 an example using recursion to construct and search binary search tree.
 /*
-
-# include <stdio.h>
-# include <stdlib.h>
 
 typedef struct node
 {
     int number;
-    struct node *next;
+    struct node *left;
+    struct node *right;
 }
 node;
 
-int main(void)
+bool search(node *tree, int num)
 {
-    node *list = NULL;
-
-    node *n = malloc(sizeof(node));
-    
-    if (n == NULL)  // something wrong, maybe no palce in memory
+    // remember every time check NULL of pointer
+    if (tree == NULL)
     {
-        free(list);
-        return 1;
+        return false;
     }
-    // assign value
-    n->number = 1;
-    n->next = NULL;
-    // give over to list
-    list = n;   
-    // cannot free n here since list and n point to the same node
-    // so just let n points to another new allocated node
-    n = malloc(sizeof(node));
-    
-    if (n == NULL)
+    else if (num < tree-> number)
     {
-        free(list);
-        return 1;
+        search(tree->left, num);
     }
-    
-    n->number = 2;
-    n->next = NULL;
-    list->next = n;
-    
-    n = malloc(sizeof(node));
-    
-    if (n == NULL)
+    else if (num > tree->number)
     {
-        free(list->next); // free one by one from end to begining
-        free(list);
-        return 1;
+        search(tree->right, num);
     }
-    
-    n->number = 3;
-    n->next = NULL;
-    list->next->next = n;
-    //print linked list using for loop from list to end
-    for (node *tmp = list; tmp!=NULL; tmp = tmp->next)
+    else
     {
-        printf("%i\n", tmp->number);
-    }
-    //free linked list using while loop from list to end
-    while (list != NULL)
-    {
-        node *tmp = list->next;
-        free(list);
-        list = tmp;
+        return true;
     }
 }
