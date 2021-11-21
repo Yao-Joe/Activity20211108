@@ -7,7 +7,7 @@ Notes here!!!
   range
   list: an automatic sized array
   tuple：coordinates (x,y)
-  dict: key value pair
+  dict: like hash table, very fast, O is nearly constant number. 
   set: unique variable
  
 3. "." in C is only getting into function and use variable, but in Python, also object's function
