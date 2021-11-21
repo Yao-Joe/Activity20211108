@@ -1,0 +1,12 @@
+/*
+eg3 an example similar to eg2. But use sys module to import and add sys.exit(0) similar to "return 0;" in C.
+*/
+
+import sys
+
+if len(sys.argv) == 2:
+    print(f"hello, {sys.argv[1]}")
+    sys.exit(0)
+else:
+    print("hello, world")
+    sys.exit(1)
