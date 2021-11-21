@@ -1,0 +1,30 @@
+Notes here!!!
+
+/*
+This week introduces data structure, very important concept.
+*/
+
+1. linked list
+Use "struct", ".", "*" to build customed data structure
+
+ ----- 
+|  1  |   
+ ----- 
+|0x456|   // 0x456 is not address of 1. 0x456 points to 2
+ ----- 
+   |     -----   
+   ---->|  2  |     
+         ----- 
+        |0x789|   
+         ----- 
+           |     ----- 
+           ---->|  3  |   
+                 ----- 
+                |NULL |   
+                 ----- 
+Use more spaces in memory to store linked list data. 
+A good reason is array can only allocate continuous memory. If we need add more numbers to array and no more spaces in the end in memory, it will go wrong.
+While using linked list will not have this problem.
+
+2. 
+  
