@@ -1,2 +1,15 @@
 Notes here!!!
 
+1. data type: (so called loose type)
+  bool float int str
+
+2. data structure:
+  range
+  list: an automatic sized array
+  tuple：coordinates (x,y)
+  dict: key value pair
+  set: unique variable
+ 
+3. "." in C is only getting into function and use variable, but in Python, also object's function
+
+4. 
