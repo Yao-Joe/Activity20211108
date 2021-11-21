@@ -12,4 +12,11 @@ Notes here!!!
  
 3. "." in C is only getting into function and use variable, but in Python, also object's function
 
-4. 
+4. According to an example(not shown here) that C runs nearly twice faster than Python and why?
+Python is an interpreted language and an interpreter. 
+C will compile before run which is converting source code into machine code. Then run time is short.
+But Python is like a program running all the time, when executing the "Python ./[filename]" command line, python will interpret the code one by one to machine code and execute.
+And Python uses modules or other functions to support, then between source code and machine code lies other functions which may increase running time.
+Just imagine to translate Japanese to English line by line.
+
+5. 
