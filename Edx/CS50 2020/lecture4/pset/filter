@@ -1,0 +1,41 @@
+
+
+Header:
+Part1: 14 bytes long BITMAPFILEHEADER
+Part2: 40 bytes long BITMAPINFOHEADER
+
+bitmap:
+An array of bytes, triples of which represents a pixel's color (stored in BGR)
+
+An good example is to convert 1-bit smilery (black&white) to 24-bit smiley (colorful)
+
+Goal: image filtering
+Image filtering: imagine modification of pixels
+
+An common filer:
+Grayscale: Convert colorful image to black&white image.
+
+How to filter?
+As longs as values of red, green, blue are the same. The larger the same values, the brighter the pixels.
+What if values of RGB is not the same, a simple way is taking average of pixel.
+
+Another filer:
+Sepia: Convert colorful image to sepia image, with an old-timey feel.
+
+How to filter?
+  sepiaRed = .393 * originalRed + .769 * originalGreen + .189 * originalBlue
+  sepiaGreen = .349 * originalRed + .686 * originalGreen + .168 * originalBlue
+  sepiaBlue = .272 * originalRed + .534 * originalGreen + .131 * originalBlue
+And we need round the result. And make sure the values are capped at 255 at most.
+
+Another filter:
+Reflection: Look like an image in a mirror. 
+
+How to filter?
+Move left pixels to right.
+
+Another filter:
+Blur: Make image less clear.
+
+How to filter?
+Take average value of a grid of pixels. Like 3*3 grid.
