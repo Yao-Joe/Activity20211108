@@ -1,0 +1,33 @@
+    /*
+    while loop re-construction
+    */
+    
+    while (fread(&buffer, sizeof(BYTE), FAT, input))
+    {
+        if (is_jpg(buffer))
+        {
+            //printf("hello\n");
+            count_jpg++;
+            // Write jpg file and notice double quote for w
+            FILE *output = fopen(jpg_name[count_jpg], "w"); // remove "FILE" to avoid duplicated declaration.
+            if (output == NULL)
+            {
+                fclose(input);
+                printf("Could not open file.\n");
+                return 1;
+            }
+            do
+            {
+                fwrite(&buffer, sizeof(BYTE), FAT, output);
+                fread(&buffer, sizeof(BYTE), FAT, input);
+            }
+            while (!is_jpg(buffer));
+            // Close output file
+            fclose(output);
+        }
+    }
+    // Close input file
+    fclose(input);
+    ------------------------------------------------
+    
+    
