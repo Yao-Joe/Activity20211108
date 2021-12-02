@@ -1,0 +1,8 @@
+First of all,
+fscanf() function return EOF when pointer moves to the end of file. You should use if (scanf() == EOF)
+
+Second, about node,
+When search or print values of node, use for
+When delete or free values of node, use while
+*ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+*ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
