@@ -13,3 +13,40 @@ Third,
 Do not forget to close file in the end!
 
 Until "All heap blocks were freed -- no leaks are possible" shows up that no memory leakage.
+
+--------------------------------------------------------------------------------------------
+First attemp: 26 initials
+
+lalaland.txt
+WORDS MISSPELLED:     955                                       WORDS MISSPELLED:     955
+WORDS IN DICTIONARY:  143091                                    WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        17756                                     WORDS IN TEXT:        17756
+TIME IN load:         0.02                                      TIME IN load:         0.02
+TIME IN check:        0.51                                    | TIME IN check:        0.01
+TIME IN size:         0.00                                      TIME IN size:         0.00
+TIME IN unload:       0.00                                    | TIME IN unload:       0.02
+TIME IN TOTAL:        0.53                                    | TIME IN TOTAL:        0.05
+
+Second attemp: 26*26 first 2 letters
+
+lalaland.txt
+WORDS MISSPELLED:     955                                       WORDS MISSPELLED:     955
+WORDS IN DICTIONARY:  143091                                    WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        17756                                     WORDS IN TEXT:        17756
+TIME IN load:         0.02                                      TIME IN load:         0.02
+TIME IN check:        0.09                                    | TIME IN check:        0.01
+TIME IN size:         0.00                                      TIME IN size:         0.00
+TIME IN unload:       0.00                                    | TIME IN unload:       0.02
+TIME IN TOTAL:        0.12                                    | TIME IN TOTAL:        0.05
+
+Second attemp: 26*26*26 first 3 letters
+
+lalaland.txt
+WORDS MISSPELLED:     955                                       WORDS MISSPELLED:     955
+WORDS IN DICTIONARY:  143091                                    WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        17756                                     WORDS IN TEXT:        17756
+TIME IN load:         0.02                                      TIME IN load:         0.02
+TIME IN check:        0.03                                    | TIME IN check:        0.01
+TIME IN size:         0.00                                      TIME IN size:         0.00
+TIME IN unload:       0.00                                    | TIME IN unload:       0.02
+TIME IN TOTAL:        0.05                                      TIME IN TOTAL:        0.05
