@@ -15,7 +15,7 @@ Do not forget to close file in the end!
 Until "All heap blocks were freed -- no leaks are possible" shows up that no memory leakage.
 
 --------------------------------------------------------------------------------------------
-First attemp: 26 initials
+First attempt: 26 initials
 
 lalaland.txt
 WORDS MISSPELLED:     955                                       WORDS MISSPELLED:     955
@@ -27,7 +27,7 @@ TIME IN size:         0.00                                      TIME IN size:   
 TIME IN unload:       0.00                                    | TIME IN unload:       0.02
 TIME IN TOTAL:        0.53                                    | TIME IN TOTAL:        0.05
 
-Second attemp: 26*26 first 2 letters
+Second attempt: 26*26 first 2 letters
 
 lalaland.txt
 WORDS MISSPELLED:     955                                       WORDS MISSPELLED:     955
@@ -39,7 +39,7 @@ TIME IN size:         0.00                                      TIME IN size:   
 TIME IN unload:       0.00                                    | TIME IN unload:       0.02
 TIME IN TOTAL:        0.12                                    | TIME IN TOTAL:        0.05
 
-Second attemp: 26*26*26 first 3 letters
+Third attempt: 26*26*26 first 3 letters (For eg, "acc" still has many collisions)
 
 lalaland.txt
 WORDS MISSPELLED:     955                                       WORDS MISSPELLED:     955
@@ -50,3 +50,5 @@ TIME IN check:        0.03                                    | TIME IN check:  
 TIME IN size:         0.00                                      TIME IN size:         0.00
 TIME IN unload:       0.00                                    | TIME IN unload:       0.02
 TIME IN TOTAL:        0.05                                      TIME IN TOTAL:        0.05
+
+Fourth attempt:
