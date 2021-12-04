@@ -1,1 +1,11 @@
 Notes here!!!
+
+SQLite features (relational database):
+1. use binary files that are more compact, efficient (others might be ASCII or)
+2. tables (others might be sheets)
+
+Approches:
+1. (easier) .mode csv
+            .import FILE TABLE
+             
+            
