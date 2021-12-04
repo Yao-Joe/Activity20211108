@@ -24,3 +24,10 @@ Key word:
 NOT NULL, UNIQUE
 
 为了解决多个值用符号分割的问题，用foreign key和另一个table用行存储
+
+More data types in other server (Oracle):
+BLOB 
+INTEGER--smallint integer bigint 
+NUMERIC--boolean date datetime numeric ...
+REAL--real double precision
+TEXT--char(n) varchar(n) text 设想一下很多网站设置最大输入文本，也是用处之一
