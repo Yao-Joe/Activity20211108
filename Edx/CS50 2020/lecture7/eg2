@@ -1,0 +1,14 @@
+import csv
+
+title = input("Title: ").strip().upper()
+
+with open(" .csv", 'r') as file:
+  reader = csv.DictReader(file)
+  count = 0
+  for row in reader:
+    if row['title'].strip().upper() == title:
+      counter += 1
+      
+print(counter)
+
+O(n) 
