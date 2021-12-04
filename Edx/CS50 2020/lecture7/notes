@@ -7,5 +7,20 @@ SQLite features (relational database):
 Approches:
 1. (easier) .mode csv
             .import FILE TABLE
-             
-            
+            .save 
+Basics:            
+SELECT title FROM shows WHERE title = "The Office";
+SELECT title FROM shows WHERE title LIKE "%Office%";
+SELECT DINSTINCT(UPPER(title)) FROM shows ORDER BY UPPER(title);
+SELECT UPPER(title), COUNT(TRIM(title)) FROM shows GROUP BY UPPER(TRIM(title)) ORDER BY COUNT(title) DESC LIMIT 10;
+
+No csv type data, because 因为如果有符号，很难选%Music%，如果还有"Musical"，"Music",
+INSERT INTO shows (Timestamp, title, genres) VALUES("now", "The Muppet Show", "Comedy, Musical");
+UPDATE shows SET genres = "Comedy, Drama, Musical" WHERE title = "The Muppet Show";
+
+Data type:
+BLOB INTEGER NUMERIC REAL TEXT
+Key word:
+NOT NULL, UNIQUE
+
+为了解决多个值用符号分割的问题，用foreign key和另一个table用行存储
