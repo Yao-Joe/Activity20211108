@@ -1,0 +1,6 @@
+//Hints
+
+7. When sort by rating and title, notice DESC for rating, not for title.
+11. If you want to choose after rating, it would be difficult bcs the order is optional when use IN
+    Use JOIN to join first, then order
+12. INTERSECT
