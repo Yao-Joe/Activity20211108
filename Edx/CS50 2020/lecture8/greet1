@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script>
+            function greet()
+            {
+                // querySelector will select the whole tree(who html file) and find name
+                let name = document.querySelector('#name').value;
+                alert('hello, ' + name);
+            }
+
+        </script>
+        <title>
+            hello, title
+        </title>
+    </head>
+    <body>
+        <form onsubmit="greet(); return false;">
+            <input autocomplete="off" autofocus id="name" placeholder="what's your name?" type="text">
+            <input type="submit" value="Greet Me">
+        </form>
+    </body>
+</html>
