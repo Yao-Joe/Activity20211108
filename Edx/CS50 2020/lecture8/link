@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <sytle>
+            
+            #harvard
+            {
+                color: #ff0000;
+            }
+            
+            #yale
+            {
+                color:#0000ff;
+            }
+            
+            a
+            {
+                color: #ff0000;
+                text-decoration: none;
+            }
+            
+            a:hover
+            {
+                text-decoration: underline;
+            }
+        </sytle>
+        <title>
+            link
+        </title>
+    </head>
+    <body>
+        Visit <a href="image.html">Harvard</a>.
+        Visit <a href="https://harvard.edu" id="Harvard">Harvard</a>.
+        Visit <a href="https://yale.edu" id="Yale">Yale</a>.
+    </body>
+</html> 
