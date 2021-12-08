@@ -1,10 +1,12 @@
-from flask import Flask
+from flask import Flask, render_template, request
 
 app = Flask(__name__)  # convert name to app
 
-@app.route("/")         # find route
+@app.route("/")         # find route, "/" is the simplest, if change to "/secret", website change to "/secret"
 def index():            # function
-    return "hello, world"
+     # template is similar to open and read in python file
+     # "name" is argument, "world" is default value
+    return render_template("index.html", name=request.args.get("name", "world")) 
    
 '''
 Then terminal run "flask run" and open the link which is a website showing hello world
