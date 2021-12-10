@@ -15,3 +15,9 @@ Then terminal run "flask run" and open the link which is a website showing hello
 variable, and a "wsgi.py" or "app.py" module was not found in the current directory."
 Then type "export FLASK_APP=[filename]" and run "flask run" again.
 '''
+
+@app.route("/greet", methods=["POST"])
+def greet():
+    # request.args is for GET
+    # request.form is for POST
+    return render_template("greet.html", name=request.form.get("name", "world"))
