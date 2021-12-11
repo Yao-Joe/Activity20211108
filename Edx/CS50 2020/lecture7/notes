@@ -8,6 +8,10 @@ Approches:
 1. (easier) .mode csv
             .import FILE TABLE
             .save 
+sqlite3 [database]
+.tables
+.schema [tablename]
+
 Basics:            
 SELECT title FROM shows WHERE title = "The Office";
 SELECT title FROM shows WHERE title LIKE "%Office%";
