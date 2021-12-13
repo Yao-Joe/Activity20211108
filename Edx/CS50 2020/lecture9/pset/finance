@@ -1,0 +1,7 @@
+Hints:
+1. When register, if username exists, then the username cannot be used again. 
+Prompt "***"
+Before, I used to SELECT all name from users and compare. But I dont know what kind of data it returns
+Then, I change to SELECT * when user exists. So the judgement is changed to whether it returns data or not.
+
+2. 
