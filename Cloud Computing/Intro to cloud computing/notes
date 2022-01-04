@@ -1,0 +1,25 @@
+Cloud computing: 
+Delivery of on-demand computing resources.
+A model for enabling convenient, on-demand network access to a shared pool of configurable computing resources 
+that can be rapidly provisioned and released with minimal management effort or service provider interaction.
+
+5 Essential Characteristics:
+On-demand Self-service
+Broad Network Access
+Resource Pooling
+Rapid Elasticity
+Measured Service
+
+3 service models:
+Public
+Hybrid
+Private
+
+3 service models:
+Infrastructure Platform Application
+Iaas           Paas     SaaS
+
+Key considerations for cloud computing:
+Infrastructure and Workloads
+Speed and Productivity
+Risk Exposure
