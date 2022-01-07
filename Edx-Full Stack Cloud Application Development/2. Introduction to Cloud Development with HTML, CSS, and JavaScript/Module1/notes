@@ -1,0 +1,14 @@
+Notes here!!!
+
+New knowledge of cloud:
+1. Most websites contain static and dynamic elements to provide the best user experience.
+Cloud Applications are similar to Websites in that they request content that a server returns.
+
+2. Cloud Apps are built to work seamlessly with a Cloud-based back-end infrastructure, Cloud-based
+data storage and data processing, and other Cloud services, making them very scalableand very resilient.
+
+The diffs (Front-end vs Back-end):
+The front-end deals with everything that happens at the client-side – everything the usercan see and interact with.
+The back-end deals with everything that happens on the server before the code and data aresent to the client.
+The back-end coding usually handles the logic and functionality that make the website orapp work, and the authentication processes that keep data secure.
+Back-end developers may also work with relational or noSQL databases, even collaborating withdatabase administrators in bigger projects.
