@@ -12,3 +12,49 @@ The front-end deals with everything that happens at the client-side – everythi
 The back-end deals with everything that happens on the server before the code and data aresent to the client.
 The back-end coding usually handles the logic and functionality that make the website orapp work, and the authentication processes that keep data secure.
 Back-end developers may also work with relational or noSQL databases, even collaborating withdatabase administrators in bigger projects.
+
+Examples for code editors and IDEs include Sublime Text, Atom, Vim, VS Code, Visual Studio,
+Eclipse and NetBeans.
+
+Front-end of a website:
+Hypertext Markup Language (HTML), Cascading Style Sheets (CSS) and JavaScript
+More languages like CSS: Learner Style Sheets (LESS) and Syntactically Awesome Style Sheets (SASS).
+Less.js is a JavaScript tool that converts the LESS styles to CSS styles.
+Angular frameworks allow websites to render the HTML pages quickly and efficiently.
+React.js is a JavaScript library that builds and renders components for a web page.
+React.js only helps build and drop components into a page.
+
+A cloud application developer’s workbench includes:
+Version Control, Libraries, and Frameworks.
+Version control systems keep track of what changes were made when and by whom and resolveany conflicts between changes.
+Libraries are collections of code, like standard programs and subroutines, that you can use within your code.
+jQuery is a JavaScript library that simplifies Dom manipulation.
+Email-validator is a small library that checks an email address is correctly constructed
+and valid.
+Apache Commons Proper is a repository of reusable Java components.
+Frameworks provide a standard way to build and deploy applications.
+AngularJS is a JavaScript-based framework for dynamic web applications.
+Vue.js is a JavaScript framework focused on the user interface.
+Django is a framework that uses Python for web development.
+
+More Application Development Tools：
+CI/CD, Build Tools, Packages, and Package Managers.
+Continuous Integration (CI) ensures that all the code components work together smoothly.
+Continuous delivery (CD) begins where CI ends. The CI process automatically builds and tests
+your code, then CD deploys all code changes in a build to a testing or staging environment.
+Some examples of build tools are:
+Webpack – a module bundler for JavaScript
+Babel – a JavaScript compiler
+Some commonly used package managers for each of the major platforms are listed here:
+On Linux - Debian Package Management System (DPKG) and Red Hat Package Manager (RPM)
+On Windows - Chocolatey
+On Android - Package Manager
+On MacOS - Homebrew and MacPorts
+Here are some examples of package managers for popular languages:
+For Node.js/Javascript - npm
+For Java - Gradle and Maven
+For Ruby - RubyGems
+For Python - Pip and Conda
+
+A back-end developer creates and manages all the resources that are needed to respond to
+the requests that the user makes through the client.
