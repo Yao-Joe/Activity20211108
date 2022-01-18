@@ -1,0 +1,82 @@
+# /var/lib/docker docker的默认工作路径
+# Docker是一个Client-Server结构的系统，Docker的守护进程运行在主机上，通过socket从客户端访问
+# DockerServer接收到DockerClient的指令，就会执行这个指令。
+-----------------------帮助命令---------------------
+docker version #显示版本信息
+docker info #系统信息
+docker 命令 --help #帮助命令
+-----------------------镜像命令---------------------
+docker images #查看image
+docker search 镜像名 #搜索镜像
+docker pull 镜像名 #下载镜像
+docker rmi -f 容器id 容器id 容器id #批量删除镜像
+docker rmi -f $(docker images -aq) #删除全部镜像 
+-----------------------容器命令---------------------
+运行容器
+$ docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+# 参数说明
+--name="Name" 容器名字，以作区分
+-d 分离detached mode
+-it 使用交互方式运行，进入容器查看内容
+-p 指定容器端口 -p 8080:8080
+    -p [host ip]:主机端口：容器端口
+    -p 主机端口：容器端口
+    -p 容器端口
+    容器端口
+-P 随机指定端口
+显示容器
+docker ps 
+    #显示正在运行的容器
+-a  #显示所有容器
+-n=? #显示最近创建的容器 -n=1 
+-q  # 只显示容器的id
+退出容器
+exit #停止容器并退出
+ctrl+P+Q #容器不停止退出
+删除容器
+docker rm 容器id #删除一个容器，不能删除运行中的容器
+docker rm -f $(docker ps -aq) #递归删除所有容器
+docker ps -ap|xargs docker rm #删除所有容器
+启动和停止容器的操作
+docker start 容器id
+docker restart 容器id
+docker stop 容器id
+docker kill 容器id #强制停止当前容器
+实例
+docker pull centos 
+docker run -it centos /bin/bash #交互，并规定运行命令
+exit # 退出
+docker ps -a # 查看
+-----------------------常用命令---------------------
+后台启动命令
+docker run -d 镜像名
+# 常见的坑，docker容器使用后台运行，就必须要有一个前台进程，若docker发现没有容器在运行，就会停止后台进程
+# nginx，启动后发现自己没有提供服务，就会立刻停止
+查看日志
+docker logs -tf --tail 10 容器id
+-tf 
+--tail number #显示日志条数
+查看容器中进程ps
+dockers top 容器id
+查看镜像的原数据
+docker inspect 容器id 
+进入当前正在运行的容器
+#通常容器都是在后台运行的，需要进入容器修改配置
+docker exec -it 容器id bashshell #进入容器后开启一个新的终端，可以进行操作（常用）
+docker attach 容器id #进入容器正在执行的终端，不会启动新的进程
+从容器内拷贝文件到主机
+ docker cp [OPTIONS] CONTAINER:SRC_PATH DEST_PATH|-
+ docker cp 容器id:容器内路径  目的主机路径
+ #拷贝是一个手动过程，-v卷技术实现自动同步
+部署nginx
+docker search
+docker pull nginx
+docker run -d --name=nginx01 -p 3344:80 nginx
+curl localhost:3344
+docker exec -it nginx01 /bin/bash
+exit
+部署tomcat
+docker search
+docker pull tomcat
+docker run -d --name=tomcat01 -p 3355:8080 tomcat
+#由于镜像是最小版，需要再webapps.dis
