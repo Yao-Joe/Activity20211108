@@ -1,0 +1,130 @@
+------------------------------文件处理命令----------------------------------
+ls /
+ls -a 显示隐藏文件 
+ls -l -long 显示文件详情 l开头表示软链接，d开头表示目录，-表示文件
+ls -lh -long -human (人性化显示大小）
+ls -ld /etc 查看目录的详细信息 -d 查看目录属性 
+ls -i 查看i节点，类似id
+
+mkdir /tmp/Japan 创建目录
+mkdir -p /tmp/Japan/Tokyo 递归创建
+mkdir /tmp/Japan /tmp/Korea 创建多目录
+
+rmdir /tmp/Japan/Tokyo 删除空目录
+
+cp [目标文件] /root 复制目标文件到目标目录+可以修改名称
+cp -r 复制目标目录到其他目录 
+cp [] [] [] [] /root 复制多个目标文件到目标目录
+cp -p 保存复制后目标文件的属性，比如创建时间
+
+mv 剪切，不需要r，其他和cp一样
+
+rm 删除文件
+rm -r 删除目录
+rm -rf 强制删除，无需确认
+
+touch /root/Japan.list 创建文件
+touch "program files" 不建议有空格
+
+cat /etc/issue 显示文件内容
+cat -n /etc/issue 显示行号
+tac 反向显示
+more 查看文件内容（适合内容多的文件）f 或者空格翻页，enter下一行，q/Q退出
+less 和more类似，可以往回翻，/搜索， n 下一个
+head -n 7 查看前七行，默认查看前10行
+tail -n 7 查看后七行，默认查看后10行
+tail -f /var/log/messages 动态显示文件末尾的内容，可以用来监控日志
+
+ln -s [原文件] [目标文件] 软链接，l开头，类似windows的快捷方式，和原文件拥有不同id
+ln 硬链接，和原文件拥有相同id，不支持分区，不能对目录做链接
+------------------------------------------权限管理命令------------------------------------------------
+umask -S 显示、设置文件的缺省权限。文件的缺省权限没有x
+chmod g+w, o-r Japan.list
+chmod g=rwx 
+chmod -R 777 递归修改，改变目录权限的同时，改变目录下所有目录和文件的权限
+-----------------------------------------------------------------------------------------------------------
+*能删除一个文件的条件不是对文件有写权限，而是对文件所在目录有写权限。
+file		r: cat/more/less/head/tail
+   	w: vim
+   	x: script command
+directory  r: ls
+ w: mkdir/rmdir/rm/touch
+ x: cd
+-----------------------------------------------------------------------------------------------------------
+chown [用户] [文件名] 只有root可以这样操作
+chgrp [组名] [文件或目录] 只有root可以这样操作
+------------------------------------------文件搜索命令-------------------------------------------------
+find /etc -name init 搜索命令，占用服务器资源，高峰期不建议使用，搜索范围越小越好，条件越精准越好
+find /etc -name *init* 模糊匹配
+find /etc -name init* 以init开头的文件
+find /etc -name init??? 
+find /etc -iname 不区分大小写
+find / -size +n 大于 -n小于 n等于
+find / -size +204800 查找大于100M的文件
+find / -type -f 文件 -d 目录 -l 软链接
+find /home -user(-group) shenchao 
+find /etc -cmin -5 查找5min内修改过属性的文件和目录
+-admin 访问时间 access
+-cmin 文件属性 change
+-mmin 文件内容 modify
+find /etc -size +102400 -a -size -204800 查找大于50MB并且小于100MB的文件 -a (and) -o (or)
+find /etc -name initlab -exec ls -l {} \; 查找并显示详细信息，-exec/-ok 对搜索结果操作；{} \; 为固定格式
+find /home -user shenchao -ok rm {} \; 搜索并删除，逐个确认
+find . -inum 31531 -exec rm {} \; 当前目录下搜索i节点执行删除
+
+locate [文件名] 在locate资料库中查找系统文件 locate locate
+updatedb 更新资料库，/tmp目录下的文件不在资料库中
+locate -i 不区分大小写查找
+which 查找命令的位置和别名
+whereis 搜索命令，位置和帮助文档位置
+
+grep [关键字] [文件名] 
+grep -i multiuser /etc/inittab
+grep -v ^# /etc/inittab 查找除首字母是#号的内容 -v排除指定字串 
+------------------------------------------帮助命令--------------------------------------------------
+man ls 显示ls帮助信息，帮助命令信息
+/-l 检索出含-l的信息
+man services 显示配置文件services的帮助信息（注意只用写文件名就可以，不能写路径）
+man passwd 1命令的帮助 5 配置文件的帮助
+whatis ls  命令
+apropos services 配置文件
+--help
+info 和man差不多
+help umask/cd 查看shell内置命令，比如看if while case等
+
+useradd shenchao添加用户
+passwd 设置密码
+who 查看用户登陆信息 （显示tty 本地终端，pts远程终端）
+------------------------------------------压缩解压命令--------------------------------------------------
+gzip [压缩后的文件名] [文件或目录]压缩，压缩完成后，不保留原文件
+gunzip （gzip -d）
+tar -cvf Japan.tar Japan 打包Japan目录，并命令Japan.tar。-c 打包 -v显示详细信息 -f指定文件名
+tar -zcf Japan.tar.gz Japan 打包加压缩 -z压缩
+tar -zxvf Japan.tar.gz 解包加解压缩 -x解包
+zip [压缩后的文件名] [文件或目录]压缩，压缩完成后，保留原文件，windows通用，使用不多 
+zip -r 压缩目录
+unzip 解压文件和目录
+bzip2 -k 压缩文件后保留原文件
+bzip2 -cjf Japan.tar.bz2 Japan 打包加压缩目录 -xjf 解包加解压缩
+------------------------------------------网络命令--------------------------------------------------
+write 给某个在线用户发信息。 ctrl+D保存信息
+wall 广播信息 
+ping -c 3 
+ifconfig etho [IP add]
+mail [用户名] 发邮件信息 ctrl+D保存信息，help，1 查看序号1，h 显示内容，d 1 删除序号1，q 退出
+last 显示所有用户最后登录信息
+lastlog 显示特定用户上次登录时间
+traceroute
+netstat 网络状态查询 -t TCP，-u UDP，-l 监听，-r 路由，-n 显示IP和端口号 
+-tlun  查看本机监听端口 -an 本机所有网络连接 -rn 本机路由表
+setup (RedHat开放，配置完成后 service network restart)
+mount 挂载命令
+------------------------------------------关机重启命令--------------------------------------------------
+shutdown 关机 -c 取消前一个关机命令 -h 关机 -r 重启（关机之前一定要终止服务，不然会损坏硬盘）
+halt
+poweroff
+init 0 
+reboot 重启
+init 6 
+runlevel 显示当前等级
+logout 退出登录 （操作完之后一定要退出登录）
