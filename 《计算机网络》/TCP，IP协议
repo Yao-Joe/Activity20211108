@@ -12,6 +12,11 @@ ARP命令可用于查询本机ARP缓存中IP地址和MAC地址的对应关系、
 ICMP协议的格式（Ping采用ICMP）ICMP全称Internet Control Message Protocol，就是互联网控制报文协议。
 。ICMP是封装在IP包中的，在传输指令的时候，需要源地址和目标地址。它用于网际协议中发送控制消息，提供可能发生在通信环境中的各种问题反馈。
 
+静态路由协议：
+RIP协议 ：RIP(Routing Information Protocol,路由信息协议）是使用最久的协议之一。RIP是一种分布式的基于距离向量的路由选择协议，RIP协议是施乐公司20世纪80
+年代推出的，主要适用于小规模的网络环境。RIP协议主要用于一个AS(自治系统)内的路由信息的传递，每30s发送一次路由信息更新。它选择路由的度量标准（metric)是跳数，
+最大跳数是15跳，如果大于15跳，它就会丢弃数据包。
+
 动态路由协议：
 1. 基于链路状态路由算法的OSPF,链路状态路由(link state routing) 基于Dijkstra算法；
 OSPF(Open Shortest Path First,开放式最短路径优先)：
